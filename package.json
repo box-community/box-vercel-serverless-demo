@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "box-node-sdk": "^2.8.1",
+    "jest": "^29.5.0",
+    "jimp": "^0.22.7",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "url-template": "^3.1.0"
+  }
 }
