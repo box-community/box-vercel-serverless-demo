@@ -1,6 +1,8 @@
-module.exports = (req, res) => {
-    res.json({
-        hola: 'Alex', 
-        env: process.env.MY_SECRET
-    })
-}
+export default function hello(request, response) {
+    response.status(200).json({
+      body: request.body,
+      query: request.query,
+      cookies: request.cookies,
+      env: process.env.MY_SECRET,
+    });
+  }
