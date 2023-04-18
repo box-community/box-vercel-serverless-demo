@@ -9,7 +9,7 @@ export default async function boxskill(request, response) {
         }, 
         enterpriseID: "273262935" 
     }
-    const sdk = BoxSDK.getPreconfiguredInstance(sdkConfig)
+    const sdk = Box.getPreconfiguredInstance(sdkConfig)
 
     const client = sdk.getAnonymousClient(); 
 
