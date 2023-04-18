@@ -10,8 +10,8 @@ export default async function boxskill(request, response) {
         enterpriseID: "273262935" 
     }
     const sdk = Box.getPreconfiguredInstance(sdkConfig);
-    
-    const client = sdk.getCCGClientForUser("10590382935");
+
+    const client = sdk.getCCGClientForUser("25097633932");
 
     let fileInfo = await client.files.get("1190810873364");
 
