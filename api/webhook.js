@@ -7,16 +7,20 @@ export default async function webhook(request, response) {
     if (isValid) {
       const sdkConfig = {
           boxAppSettings: {
-              clientID: process.env.CLIENT_ID,
-              clientSecret: process.env.CLIENT_SECRET
+              clientID: process.env.clientID,
+              clientSecret: process.env.clientSecret
           }, 
-          enterpriseID: "273262935" 
+          enterpriseID: process.env.enterpriseID 
       }
       const sdk = Box.getPreconfiguredInstance(sdkConfig)
 
       const client = sdk.getAnonymousClient(); 
       
       await client.files.copy('1190810873364',request.body.source.id)
+
+      // await client.fileRequests.update(process.env.fileRequestID, {
+      //   title: 'Case Document Request'
+      // })
       
       response.status(200).json({
         info: 'success'
