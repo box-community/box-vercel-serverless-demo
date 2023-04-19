@@ -16,7 +16,7 @@ export default async function webhook(request, response) {
 
       const client = sdk.getAnonymousClient(); 
       
-      await client.fileRequests.copy(process.env.fileRequestId, {
+      await client.fileRequests.copy(process.env.fileRequestID, {
         folder: {
           id: request.body.source.id,
           type: request.body.source.type
