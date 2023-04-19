@@ -19,7 +19,7 @@ export default async function webhook(request, response) {
       await client.fileRequests.copy(process.env.fileRequestId, {
         folder: {
           id: request.body.source.id,
-          type: request.body.source.id
+          type: request.body.source.type
         },
         title: "Case Document Request"
       })
