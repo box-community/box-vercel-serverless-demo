@@ -16,11 +16,13 @@ export default async function webhook(request, response) {
 
       const client = sdk.getAnonymousClient(); 
       
-      await client.files.copy('1190810873364',request.body.source.id)
-
-      // await client.fileRequests.update(process.env.fileRequestID, {
-      //   title: 'Case Document Request'
-      // })
+      await client.fileRequests.copy(process.env.fileRequestId, {
+        folder: {
+          id: request.body.source.id,
+          type: request.body.source.id
+        },
+        title: "Case Document Request"
+      })
       
       response.status(200).json({
         info: 'success'
